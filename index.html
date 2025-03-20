@@ -3,14 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul S Sharma - Portfolio</title>
-    <meta name="description" content="Portfolio website of Rahul S Sharma">
+    <title>Rahul S Sharma - Software Engineer | Java, AWS, Kubernetes Expert</title>
+    <meta name="description" content="Rahul S Sharma is a Software Engineer specializing in reactive applications, cloud infrastructure, and scalable microservices using Spring Boot, Java Webflux, AWS, and Kubernetes">
+    <meta name="keywords" content="Rahul S Sharma, Software Engineer, Java Developer, Spring Boot, AWS, Kubernetes, Microservices, Cloud Infrastructure, ReactJS, Full Stack Developer, Bangalore">
+    <meta name="author" content="Rahul S Sharma">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Rahul S Sharma - Software Engineer">
+    <meta property="og:description" content="Software Engineer specializing in reactive applications and cloud infrastructure">
+    <meta property="og:image" content="https://rahul-sharma.me/assets/images/Rahul S Sharma.jpeg">
+    <meta property="og:url" content="https://rahul-sharma.me">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rahul S Sharma - Software Engineer">
+    <meta name="twitter:description" content="Software Engineer specializing in reactive applications and cloud infrastructure">
+    <meta name="twitter:image" content="https://rahul-sharma.me/assets/images/Rahul S Sharma.jpeg">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rahul-sharma.me">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rahul S Sharma",
+      "url": "https://rahul-sharma.me",
+      "image": "https://rahul-sharma.me/assets/images/Rahul S Sharma.jpeg",
+      "jobTitle": "Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Monnai Technology India Pvt. Ltd."
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "NIT Goa"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bangalore",
+        "addressCountry": "India"
+      },
+      "email": "rsrahul1000@gmail.com",
+      "telephone": "+917020643314",
+      "sameAs": [
+        "https://linkedin.com/in/rahul-s-sharma",
+        "https://github.com/rsrahul1000"
+      ],
+      "knowsAbout": ["Java", "Spring Boot", "AWS", "Kubernetes", "React", "Cloud Infrastructure", "Microservices"]
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8RQMFM36P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-G8RQMFM36P');
+    </script>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -54,26 +114,26 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span class="highlight">Rahul S Sharma</span></h1>
+                    <h1>Hi, I'm <span class="highlight" itemprop="name">Rahul S Sharma</span></h1>
                     <div class="typewriter">
-                        <span id="typewriter-text"></span>
+                        <span id="typewriter-text" itemprop="jobTitle"></span>
                     </div>
-                    <p>I build scalable cloud systems and reactive applications that make an impact.</p>
+                    <p itemprop="description">I build scalable cloud systems and reactive applications that make an impact.</p>
                     <div class="hero-btns">
                         <a href="#contact" class="btn primary-btn">Get In Touch</a>
                         <a href="#projects" class="btn secondary-btn">View Work</a>
                     </div>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/rahul-s-sharma" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/rsrahul1000" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://rahul-sharma.me/" target="_blank"><i class="fas fa-globe"></i></a>
-                        <a href="mailto:rsrahul1000@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://linkedin.com/in/rahul-s-sharma" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/rsrahul1000" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="https://rahul-sharma.me/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        <a href="mailto:rsrahul1000@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="hero-image-container">
-                        <!-- Profile image -->
-                        <img src="assets/images/Rahul S Sharma.jpeg" alt="Rahul S Sharma" class="profile-img">
+                        <!-- Profile image with alt text -->
+                        <img src="assets/images/Rahul S Sharma.jpeg" alt="Rahul S Sharma - Software Engineer" class="profile-img" itemprop="image">
                     </div>
                 </div>
             </div>

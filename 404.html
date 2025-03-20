@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Rahul S Sharma</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .error-description {
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="error-page">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Page Not Found</h2>
+        <p class="error-description">Oops! The page you're looking for doesn't exist. It might have been moved or deleted.</p>
+        <a href="/" class="btn primary-btn">Go Back Home</a>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Simplified particles config for 404 page
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 50 },
+                color: { value: '#3498db' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, color: '#3498db', opacity: 0.4 },
+                move: { enable: true, speed: 2 }
+            }
+        });
+    </script>
+</body>
+</html> 
