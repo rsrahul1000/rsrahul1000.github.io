@@ -259,6 +259,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle contact form submission
     const contactForm = document.getElementById('contactForm');
+    const modal = document.getElementById('formResponseModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.querySelector('.modal-close');
+    const modalBtn = document.querySelector('.modal-btn');
+    const successIcon = document.querySelector('.success-icon');
+    const errorIcon = document.querySelector('.error-icon');
+    const modalTitle = document.querySelector('.modal-title');
+    const modalMessage = document.querySelector('.modal-message');
+    
+    // Function to show modal
+    function showModal(success, title, message) {
+        // Set the appropriate icon
+        successIcon.style.display = success ? 'block' : 'none';
+        errorIcon.style.display = success ? 'none' : 'block';
+        
+        // Set the title and message
+        modalTitle.textContent = title;
+        modalMessage.textContent = message;
+        
+        // Show the modal and overlay
+        modal.classList.add('active');
+        modalOverlay.style.display = 'block';
+        
+        // Add body class to prevent scrolling
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Function to hide modal
+    function hideModal() {
+        modal.classList.remove('active');
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    // Add event listeners to close modal
+    if (modalClose) {
+        modalClose.addEventListener('click', hideModal);
+    }
+    
+    if (modalBtn) {
+        modalBtn.addEventListener('click', hideModal);
+    }
+    
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', hideModal);
+    }
+    
+    // Handle escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            hideModal();
+        }
+    });
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -269,14 +323,62 @@ document.addEventListener('DOMContentLoaded', function() {
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // In a real application, you would send this data to a server
-            console.log('Form submitted:', { name, email, subject, message });
+            // Create JSON data object
+            const jsonData = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
             
-            // Reset form
-            contactForm.reset();
+            // Add loading indicator to submit button
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
             
-            // Show success message (you would implement this)
-            alert('Thank you for your message! I will get back to you soon.');
+            submitBtn.innerHTML = originalBtnText + '<span class="spinner"></span>';
+            submitBtn.disabled = true;
+            
+            // Use fetch to send the data to Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbzmOWz54e9zg3EI5rvG8TaoTVmbxThiPlsK6dACLskPfFoYi3-nXx_WkBio2-JGHpnErw/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData),
+                mode: 'no-cors' // This prevents CORS issues with Google Apps Script
+            })
+            .then(response => {
+                // Since we're using no-cors, we won't actually get a usable response
+                // We'll assume success if there's no error
+                
+                // Remove loading spinner and restore button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Show success modal
+                showModal(
+                    true, 
+                    "Message Sent Successfully!", 
+                    "Thank you for your message. I'll get back to you soon."
+                );
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                
+                // Remove loading spinner and restore button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Show error modal
+                showModal(
+                    false, 
+                    "Message Failed to Send", 
+                    "Sorry, there was an error sending your message. Please try again or contact me directly via email."
+                );
+            });
         });
     }
 

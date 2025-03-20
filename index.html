@@ -139,29 +139,29 @@
                         <div class="skill-item">
                             <div class="skill-name">Java & Spring Boot</div>
                             <div class="skill-progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">AWS & Kubernetes</div>
+                            <div class="skill-progress">
                                 <div class="progress-bar" style="width: 95%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">JavaScript/TypeScript</div>
                             <div class="skill-progress">
-                                <div class="progress-bar" style="width: 90%"></div>
+                                <div class="progress-bar" style="width: 95%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">Python & Golang</div>
                             <div class="skill-progress">
-                                <div class="progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">React & Angular</div>
-                            <div class="skill-progress">
                                 <div class="progress-bar" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-name">AWS & Kubernetes</div>
+                            <div class="skill-name">React & Angular</div>
                             <div class="skill-progress">
                                 <div class="progress-bar" style="width: 85%"></div>
                             </div>
@@ -173,8 +173,13 @@
                     <div class="skills-tags">
                         <span class="skill-tag">Spring Boot</span>
                         <span class="skill-tag">Java Webflux</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">FluentD</span>
+                        <span class="skill-tag">Go</span>
                         <span class="skill-tag">React</span>
                         <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">MongoDb</span>
+                        <span class="skill-tag">SQL</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">Flask</span>
                         <span class="skill-tag">Docker</span>
@@ -182,11 +187,11 @@
                         <span class="skill-tag">AWS</span>
                         <span class="skill-tag">Terraform</span>
                         <span class="skill-tag">Apache NiFi</span>
-                        <span class="skill-tag">FluentD</span>
                         <span class="skill-tag">Elasticsearch</span>
                         <span class="skill-tag">GCP</span>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Redux</span>
+                        <span class="skill-tag">Apache Nifi</span>
                     </div>
                 </div>
             </div>
@@ -390,6 +395,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Dialog for Form Submission Feedback -->
+    <div class="modal" id="formResponseModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-times-circle error-icon"></i>
+            </div>
+            <h3 class="modal-title">Message Sent!</h3>
+            <p class="modal-message">Thank you for your message. I'll get back to you soon.</p>
+            <button class="btn primary-btn modal-btn">OK</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
